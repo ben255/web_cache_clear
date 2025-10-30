@@ -1,21 +1,18 @@
-// You have generated a new plugin project without specifying the `--platforms`
-// flag. A plugin project with no platform support was generated. To add a
-// platform, run `flutter create -t plugin --platforms <platforms> .` under the
-// same directory. You can also find a detailed instruction on how to add
-// platforms in the `pubspec.yaml` at
-// https://flutter.dev/to/pubspec-plugin-platforms.
+import 'package:web_cache_clear/web_cache_clear_platform_interface.dart';
 
-import 'web_cache_clear_platform_interface.dart';
-
+/// The main class for interacting with the web_cache_clear plugin.
+///
+/// This class provides methods to clear the browser cache and to check
+/// the application version, triggering a cache clear and page reload if
+/// the version is outdated.
 class WebCacheClear {
-  Future<String?> getPlatformVersion() {
-    return WebCacheClearPlatform.instance.getPlatformVersion();
-  }
-
+  /// Clears the browser's Cache Storage.
   Future<void> clearCache() {
     return WebCacheClearPlatform.instance.clearCache();
   }
 
+  /// Checks the app version against a stored version in session storage.
+  /// If the versions do not match, it clears the cache and reloads the page.
   Future<void> checkAppVersion(String appVersion) {
     return WebCacheClearPlatform.instance.checkAppVersion(appVersion);
   }
