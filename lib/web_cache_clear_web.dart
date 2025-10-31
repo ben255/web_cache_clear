@@ -76,7 +76,7 @@ class WebCacheClearWeb extends WebCacheClearPlatform {
     debugPrint('WebCacheClear: Current app version from code: "$appVersion"');
 
     try {
-      final storedVersion = window.sessionStorage.getItem(cacheKey)!;
+      final String? storedVersion = window.sessionStorage.getItem(cacheKey);
       debugPrint(
         'WebCacheClear: Version found in session storage: "$storedVersion"',
       );
