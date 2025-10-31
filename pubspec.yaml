@@ -1,6 +1,6 @@
 name: web_cache_clear
 description: "A Flutter web plugin to automatically clear the browser cache and reload the page when a new app version is detected. Ideal for ensuring users get the latest version."
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/ben255/web_cache_clear
 repository: https://github.com/ben255/web_cache_clear
 

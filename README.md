@@ -21,7 +21,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  web_cache_clear: ^0.0.2
+  web_cache_clear: ^0.0.3
 ```
 
 ## Usage
