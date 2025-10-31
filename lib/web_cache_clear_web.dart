@@ -12,7 +12,7 @@ import 'web_cache_clear_current_version.dart';
 
 /// A web implementation of the WebCacheClearPlatform of the WebCacheClear plugin.
 class WebCacheClearWeb extends WebCacheClearPlatform {
-  /// A getter for the window object, settable for testing purposes.
+  /// A getter for the window object, settable for testing purposes.asd
   @visibleForTesting
   html.Window window = html.window;
 
