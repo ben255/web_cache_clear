@@ -1,3 +1,6 @@
+## 0.0.3
+* **FIX** Updating so it works on HTTPS and not just localhost.
+
 ## 0.0.2
 
 * **FIX**: Corrected logic in `checkAppVersion` to handle initial version setting.

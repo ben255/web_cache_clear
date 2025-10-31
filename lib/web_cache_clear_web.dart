@@ -26,17 +26,10 @@ class WebCacheClearWeb extends WebCacheClearPlatform {
   /// Clears the browser's Cache Storage.
   @override
   Future<void> clearCache() async {
-    // The Cache API is only available in secure contexts (HTTPS), except for localhost.
-    // First, let's confirm if `window.caches` is available.
-    if (window.caches == null) {
-      debugPrint(
-        'WebCacheClear: Cache API is not available. The site might not be considered a secure context.',
-      );
-      return;
-    }
-
     try {
-      final JSArray<JSString> keys = await window.caches!.keys().toDart;
+      // The Cache API is only available in secure contexts (HTTPS), except for localhost.
+      // We use a try-catch block to handle cases where it might be unavailable.
+      final JSArray<JSString> keys = await window.caches.keys().toDart;
       final List<String> dartKeys =
           keys.toDart.map((jsString) => jsString.toDart).toList();
 
@@ -60,11 +53,13 @@ class WebCacheClearWeb extends WebCacheClearPlatform {
 
       for (final String key in flutterCacheKeys) {
         // The key needs to be converted back to JSString for the delete method.
-        await window.caches!.delete(key).toDart;
+        await window.caches.delete(key).toDart;
         debugPrint('WebCacheClear: Deleted cache with key: $key');
       }
     } catch (e) {
-      debugPrint('WebCacheClear: An error occurred while clearing cache: $e');
+      debugPrint(
+        'WebCacheClear: An error occurred while clearing cache: $e. This can happen if the site is not served over HTTPS.',
+      );
     }
   }
 
