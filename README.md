@@ -9,7 +9,7 @@ This was vibe-coded but there was no real good way to clear the cache if you dep
 ## Introduction
 
 
-A Flutter web plugin to automatically clear the browser's session storage and reload the page when a new app version is detected. This is ideal for clearing out old application state and ensuring users get the latest version of your web application.
+A Flutter web plugin to automatically clear the browser's cache storage and reload the page when a new app version is detected. This is ideal for clearing out old application state and ensuring users get the latest version of your web application.
 
 ## Getting Started
 
